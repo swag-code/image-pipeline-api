@@ -1,0 +1,31 @@
+{
+  "name": "image-pipeline-backend",
+  "version": "1.0.0",
+  "description": "Starter: CSV upload -> async image compression -> MongoDB status API -> output CSV -> webhook (bonus)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "worker": "nodemon src/jobs/workers/processRequest.worker.js",
+    "worker:image": "nodemon src/jobs/workers/processImage.worker.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.609.0",
+    "axios": "^1.7.2",
+    "bullmq": "^5.7.10",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.1",
+    "json2csv": "^6.0.0-alpha.2",
+    "mongoose": "^8.5.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.4",
+    "streamifier": "^0.1.1",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
